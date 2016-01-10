@@ -1,0 +1,29 @@
+# Carrega imagens e efeitos sonoros
+img_player = pygame.image.load('img/player.png')
+img_gameover = pygame.image.load('img/gameover.png')
+img_logo = pygame.image.load('img/logoPython.png')
+img_wallup = pygame.image.load('img/img_wallup.png')
+img_walldown = pygame.image.load('img/img_walldown.png')
+img_start = pygame.image.load('img/start.png')
+img_bg1 = pygame.image.load('img/bg.jpg')
+img_bg2 = pygame.image.load('img/bg.jpg')
+jump = pygame.mixer.Sound('sounds/jump.wav')
+hit = pygame.mixer.Sound('sounds/explode.wav')
+jump.set_volume(0.1)
+hit.set_volume(0.1)
+
+# Funçao para exibir a introduçao
+def intro():
+    screen.fill([255, 255, 255])
+    screen.blit(img_logo, [40, 300])
+    screen.blit(img_start, [170, 50])
+    pygame.display.update()
+    pygame.time.wait(2000)
+
+# Background
+screen.blit(img_bg1, (posImg, 0))
+    screen.blit(img_bg2, (posImg + Img, 0))
+    posImg -= 2 # Velocidade
+    if posImg * -1 == Img:
+        posImg = 0
+
